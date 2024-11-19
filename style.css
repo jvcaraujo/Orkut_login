@@ -1,0 +1,173 @@
+
+        /* Estilo geral para o corpo */
+        body, html {
+            height: 100%; /* Garantir que o body e o html ocupem toda a altura da tela */
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Impede barras de rolagem */
+            box-sizing: border-box;
+            background-color: rgb(212, 221, 237);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Grid Container */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr minmax(300px, 400px); /* Duas colunas: uma fluída e outra fixa */
+            grid-template-rows: auto 1fr auto;  /* Cabeçalho, corpo e rodapé */
+            grid-template-areas: 
+                "header header"
+                "corpo login"
+                "corpo inferior"
+                "footer footer";  /* Ajustando footer para sempre ficar abaixo */
+            height: 100%; /* Ocupa toda a altura da tela */
+            padding: 10px;
+            gap: 20px;
+        }
+
+        /* Header */
+        #orkut {
+            font-size: 4rem;   
+            color: #F06292;    
+            font-family: "Lucida Sans", "Arial", sans-serif;
+            font-weight: bold;
+            text-align: center;
+            grid-column: 1 / -1; /* O título ocupa toda a largura */
+            margin-top: 20px;
+        }
+
+        /* Estilo para as palavras "Conecta-se", "Conheça" e "Compartilhe" em rosa e negrito */
+        .rosa {
+            color: #F06292;
+            font-weight: bold;
+        }
+
+        /* Corpo (section) */
+        section#corpo {
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            min-width: 250px;
+            border-radius: 10px;
+            grid-area: corpo;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;  /* Centraliza o conteúdo verticalmente */
+            text-align: center;  /* Centraliza o texto */
+            overflow: hidden; /* Impede o conteúdo de transbordar */
+        }
+
+        /* Sidebar (aside) */
+        aside#direito {
+            background-color: #a7c5f346;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            min-width: 250px;
+            border-radius: 10px;
+            grid-area: login;
+            overflow: hidden; /* Impede o conteúdo de transbordar */
+        }
+
+        /* Inferior (links adicionais) */
+        #inferior2 {
+            background-color: #a7c5f346;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            grid-area: inferior;
+            margin-top: 2px; /* Dá um pequeno espaço do conteúdo acima */
+            border-radius: 10px;
+        }
+
+        /* Formulário */
+        form#formulario {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        /* Campos de input */
+        form#formulario input[type="email"],
+        form#formulario input[type="password"] {
+            width: 80%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        form#formulario input[type="submit"] {
+            padding: .50rem;
+            background-color: #999495da;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Links no formulário */
+        #login-submeter p {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+        }
+
+        #login-submeter p a {
+            text-decoration: underline;
+            color: blue;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #a7c5f3d3;
+            padding: .1rem;
+            text-align: center;
+            color: #333;
+            font-size: 12px;
+            grid-column: 1 / -1;  /* O footer ocupa toda a largura */
+            border-radius: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;  /* Em telas pequenas, usa uma única coluna */
+                grid-template-areas: 
+                    "header"
+                    "corpo"
+                    "login"
+                    "inferior"
+                    "footer";
+            }
+
+            #orkut {
+                font-size: 3rem;  /* Ajusta o tamanho do título em telas pequenas */
+            }
+        }
+
+        /* Centralizando o texto do "Acesse o orkut com sua" */
+        #dois {
+            text-align: center;  /* Centraliza o texto */
+            font-size: 18px;  /* Ajusta o tamanho da fonte */
+            margin-bottom: 10px; /* Espaço abaixo do texto */
+        }
+
+        .check{
+            padding-left: 2rem;
+        }
+
+        .aviso{
+            padding: 12px;
+            padding-left: 4rem;
+            color: #555555a9;
+        }
+
+        /* Remover margens entre os parágrafos */
+        section#corpo p {
+            margin: 0;
+        }
+ 
